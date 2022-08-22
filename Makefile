@@ -15,6 +15,10 @@ help: ## Show this help
 .PHONY: setup
 setup: migration createsuperuser ## Make docker container, migrate db, and setup super user
 
+.PHONY: build
+build: ## only build the docker container
+	docker build .
+
 .PHONY: run
 run: ## run the OverEngineeredIt site
 	docker compose up web
