@@ -1,5 +1,6 @@
 DOCKER_ENV_FILE := FALSE
-DOCKER_COMMAND := docker compose run web 
+DOCKER_WEB_RUN_COMMAND := docker compose run web
+DOCKER_UP_DB_COMMAND := docker compose up db --wait
 SHELL := /bin/bash
 include .env
 
@@ -10,15 +11,25 @@ help: ## Show this help
 .env: ## Setup basic .env file
 	echo "Copying default.env to .env"
 	cp default.env .env
-	
+
 .PHONY: setup
 setup: migration createsuperuser ## Make docker container, migrate db, and setup super user
 
+.PHONY: run
+run: ## run the OverEngineeredIt site
+	docker compose up web
+
 .PHONY: migration
 migration: ## run Django migrations
-	docker compose run web python manage.py migrate
+	$(DOCKER_WEB_RUN_COMMAND) python manage.py migrate
 
 .PHONY: createsuperuser 
 createsuperuser: ## Create a Django admin super user
-	docker compose run web python manage.py createsuperuser
+	$(DOCKER_WEB_RUN_COMMAND) python manage.py createsuperuser
 
+.PHONY: reset
+reset: ## reset local environment (including the db & docker)
+	docker compose down --timeout 60
+	docker container prune --force
+	docker image rm overengineeredsite_web --force
+	rm -rf .env data
