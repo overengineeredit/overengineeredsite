@@ -34,6 +34,9 @@ services:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:?missing web POSTGRES_PASSWORD}
       - POSTGRES_HOST=${POSTGRES_HOST:?missing web POSTGRES_HOST}
       - POSTGRES_PORT=${POSTGRES_PORT:?missing web POSTGRES_PORT}
+      - DEBUG=${DEBUG:?missing web DEBUG}
+      - ALLOWED_HOSTS=${ALLOWED_HOSTS:?missing web ALLOWED_HOSTS}
+      - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY:?missing web DJANGO_SECRET_KEY}
     depends_on:
       db:
         condition: service_healthy
