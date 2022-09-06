@@ -5,7 +5,7 @@ services:
     image: postgres:9.5 # 9.5 supported by Django 3.2.X (LTS)
     container_name: site_db
     volumes:
-      - ./data/db:/var/lib/postgresql/data
+      - postgres_9_5:/var/lib/postgresql/data
     ports:
       - ${POSTGRES_PORT}:${POSTGRES_PORT}
     environment:
@@ -40,3 +40,6 @@ services:
     depends_on:
       db:
         condition: service_healthy
+  
+volumes:
+  postgres_9_5:

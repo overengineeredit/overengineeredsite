@@ -57,6 +57,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             'overengineeredsite/template/personal_site',
+            os.path.join(BASE_DIR, 'templates'),
+            '/usr/local/lib/python3.10/site-packages/django/contrib/admin/templates/',
         ],
         'OPTIONS': {
             'context_processors': [
