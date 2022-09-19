@@ -1,0 +1,41 @@
+/* Add a black background color to the top navigation */
+nav {
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: .33em;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Navigation Bar */
+nav nav_items {
+    float: right;
+}
+
+nav div {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-size: 17px;
+    padding: .5em;
+}
+
+nav branding a {
+    text-decoration: none;
+    color:black;
+}
+
+nav div a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* body copy */
+content {
+    padding: 3em;
+}
+
+footer {
+    float: bottom;
+}
