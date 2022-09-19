@@ -2,7 +2,7 @@
 nav {
     overflow: hidden;
     text-decoration: none;
-    border-radius: .33em;
+    border-radius: .5em;
     border-width: 1px;
     border-color: black;
     border-style: solid;
@@ -17,7 +17,7 @@ nav div {
     float: left;
     text-align: center;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 1.25em;
     padding: .5em;
 }
 
@@ -31,8 +31,13 @@ nav div a:hover {
     font-weight: bold;
 }
 
+nav div a:any-link {
+    color:black;
+
+}
 /* body copy */
 content {
+    display: block;
     padding: 3em;
 }
 
