@@ -1,0 +1,30 @@
+{% load static %}
+
+<html>
+
+<head>
+    <title>Over Engineered It{% block page_name %}{% endblock page_name%}</title>
+
+    <link media="screen, projection" rel="stylesheet" href="{% static 'overengineeredsite.css' %}">
+</head>
+
+<body>
+    <nav>
+        <branding><div id="site_title">OEI</div></branding>
+        <nav_items>
+            <div id="about_me"><a href="/">About Me</a></div>
+            <div id="resume_link"><a href="/resume">Resume</a></div>
+        </nav_items>
+    </nav>
+
+    <content id="content">
+        {% block content %}{% endblock content %}
+    </content>
+
+    <footer>
+        <hr />
+        <copyright>copyright 2022, All Rights held by Peenak Inamdar.</copyright>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+/* Add a black background color to the top navigation */
+nav {
+    overflow: hidden;
+    text-decoration: none;
+    border-radius: .5em;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+/* Navigation Bar */
+nav nav_items {
+    float: right;
+}
+
+nav div {
+    float: left;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.25em;
+    padding: .5em;
+}
+
+nav branding a {
+    text-decoration: none;
+    color:black;
+}
+
+nav div a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+nav div a:any-link {
+    color:black;
+
+}
+/* body copy */
+content {
+    display: block;
+    padding: 3em;
+}
+
+/* Resume */
+job_title {
+    font-weight: bold
+}
+
+company {
+    text-decoration: underline;
+}
+
+dates {
+    font-style: italic;
+}
+
+/* Footer */
+footer {
+    float: bottom;
+}
