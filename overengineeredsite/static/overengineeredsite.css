@@ -41,6 +41,20 @@ content {
     padding: 3em;
 }
 
+/* Resume */
+job_title {
+    font-weight: bold
+}
+
+company {
+    text-decoration: underline;
+}
+
+dates {
+    font-style: italic;
+}
+
+/* Footer */
 footer {
     float: bottom;
 }
